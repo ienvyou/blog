@@ -2,7 +2,7 @@
 layout: post
 title:  "자바 웹 어플리케이션에 대해서"
 date:   2018-06-22 16:16:01
-description: "
+description: "자바에 대해서 알아 봅니다."
 categories: java web application
 ---
 
