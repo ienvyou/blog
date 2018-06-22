@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Linux kdump"
+title:  "Linux kdump에 대한 이해"
 date:   2018-06-22 16:16:01
 categories: linux
 ---
