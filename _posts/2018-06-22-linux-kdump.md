@@ -5,27 +5,25 @@ date:   2018-06-22 16:16:01
 categories: linux
 ---
 
-1. kdump는 무엇인가? (The kexec-based Crash Dumping Solution)
+# 1. kdump는 무엇인가? (The kexec-based Crash Dumping Solution)
 
 kdump는 kexec를 바탕으로 한 “커널 크래쉬 덤핑 메카니즘” 입니다. 이는 커널 패닉이 발생 하였을때, 시스템의 메모리 상태를 vmcore 라는 파일 형태로 생성하는 작업입니다.
 
 
 
-2. kexec는 무엇인가?
+# 2. kexec는 무엇인가?
 
 kexec는 kdump의 핵심이라고 보시면 되겠습니다. kexec는 커널패닉이 발생하였을 때, BIOS를 거치지 않고 빠르게 새로운 커널로 부팅시키는 역할을 하는 녀석입니다. kdump가 작동하게 하는 녀석입니다. kexec로 새로운 캡쳐 커널을 사용하는 이유는 기존에 패닉이 발생한 상태에서의 커널이 아니라 새로운 커널이기 때문에 덤프를 하는 부분에서 좀더 완전하게 덤프를 생성할 수 있기 때문입니다.
 
 
 
-3. kdump가 필요한 이유
+# 3. kdump가 필요한 이유
 
 윈도우에 블루스크린이 있는것처럼 리눅스에도 커널패닉이라는 것이 존재합니다. 데스크탑같은 경우는 그냥 재부팅 해버리거나 포맷해버리면 그만이지만, 서버와 같은 경우는 장애가 발생했을 때 재부팅을 하는것도 리스크가 있는 작업이고, 장애가 발생했을 때 그 원인을 찾아내서 같은 장애가 나타나지 않도록 하는 것이 중요합니다. 그 원인을 찾을 수 있는 실마리를 제공하는 것이 vmcore 라는 코어 파일이며, 코어파일을 생성하는 것이 kdump라고 생각하면 됩니다.
 
 
 
-
-
- 4. kdump와 kexec의 구동원리
+#  4. kdump와 kexec의 구동원리
 
 
 
@@ -35,7 +33,7 @@ kexec는 kdump의 핵심이라고 보시면 되겠습니다. kexec는 커널패�
 
 
 
-4.1. kexec의 작동원리
+## 4.1. kexec의 작동원리
 
 kexec는 kdump의 핵심 기술입니다. kexec가 정확히 하는 역할은 시스템이 부팅시에 캡쳐 커널을 현재 커널에 정의 합니다. 메모리에 캡쳐 커널이 들어갈 곳을 예약한다고 보시면 됩니다. 이 과정이 그림에서 kexec -l 입니다.
 
@@ -43,7 +41,7 @@ kexec는 kdump의 핵심 기술입니다. kexec가 정확히 하는 역할은 �
 
 
 
-4.2. kdump의 작동원리
+## 4.2. kdump의 작동원리
 
 kdump는 시스템이 처음 부팅할때 시스템이 예약된 곳에 캡쳐커널이 로드됩니다. 여기서는 kexec -p 라는 명령어로 로드가 되게 됩니다. 이 부분은 내부적으로 어떻게 작동되는지 정확히 확인한 부분은 아니지만 문서에 보면 kexec -p 는 커널 패닉을 위한 캡쳐 커널을 로드하는 옵션이라고 적혀있습니다. 
 
@@ -53,11 +51,11 @@ kdump는 시스템이 처음 부팅할때 시스템이 예약된 곳에 캡쳐�
 
 
 
-5. Kdump의 설치와 설정 
+# 5. Kdump의 설치와 설정 
 
 
 
-5.1. 필요 패키지 설치
+## 5.1. 필요 패키지 설치
 
 
 
@@ -69,7 +67,7 @@ kdump는 시스템이 처음 부팅할때 시스템이 예약된 곳에 캡쳐�
 
 
 
-5.2. /boot/grub/grub.conf의 argument 변경
+## 5.2. /boot/grub/grub.conf의 argument 변경
 
 - /boot/grub/grub.conf 파일을 vi 편집기로 열어줍니다.
 
@@ -93,7 +91,7 @@ kdump는 시스템이 처음 부팅할때 시스템이 예약된 곳에 캡쳐�
 
 
 
-  5.3. 커널 파라미터 변경
+##  5.3. 커널 파라미터 변경
 
 sysctl -a | grep nmi_watchdog 명령어를 입력하여, nmi_watchdog 파라미터를 확인합니다. 해당 값이 0이라면 정상적으로 nmi_watchdog가 작동하지 않기때문에 해당 값을 1로 변경해야 합니다.
 
@@ -233,7 +231,7 @@ RHEL 6.2 부터는 /boot/grub/grub.conf 의 커널 라인에 crashkernel=auto �
 
 
 
-5.4. /etc/kdump.conf 설정
+## 5.4. /etc/kdump.conf 설정
 
 a. vmcore 생성 경로 및 방법 설정
 
@@ -313,7 +311,7 @@ e. 설정
 
 
 
-5. Kdump Operation Flow
+# 5. Kdump Operation Flow
 
  
 
@@ -345,7 +343,7 @@ vmcore 파일을 생성합니다.
 시스템을 종료합니다.
  
 
-6. Kdump 서비스 실행
+# 6. Kdump 서비스 실행
 
  - service kdump start     #kdump 서비스를 수행합니다.
 
