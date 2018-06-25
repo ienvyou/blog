@@ -1,0 +1,12 @@
+---
+layout: post
+title: openstack compute node 에 docker구현하기
+date: 2018-06-25 09:15:36 +0900
+categories: 
+author: OpenSourceConsulting
+---
+
+#### 아래의 슬라이드는 오픈스택에서 compute node를 docker로 구현하는 문서입니다. #### 이전 자료에 benchmarking data를 추가하였습니다. #### ppt로 아래 슬라이드쉐어에서 다운받으실수 있습니다. ####     Docker osc 0508  from Open Source Consulting #### ![슬라이드38.PNG]({{ "/assets/images/57/슬라이드38.PNG" | relative_url }})#### ![슬라이드39.PNG]({{ "/assets/images/57/슬라이드39.PNG" | relative_url }})#### ![슬라이드40.PNG]({{ "/assets/images/57/슬라이드40.PNG" | relative_url }})#### ![슬라이드41.PNG]({{ "/assets/images/57/슬라이드41.PNG" | relative_url }})#### ![슬라이드42.PNG]({{ "/assets/images/57/슬라이드42.PNG" | relative_url }})#### ![슬라이드43.PNG]({{ "/assets/images/57/슬라이드43.PNG" | relative_url }})#### ![슬라이드44.PNG]({{ "/assets/images/57/슬라이드44.PNG" | relative_url }})#### ![슬라이드45.PNG]({{ "/assets/images/57/슬라이드45.PNG" | relative_url }})#### ![슬라이드46.PNG]({{ "/assets/images/57/슬라이드46.PNG" | relative_url }})#### ![슬라이드47.PNG]({{ "/assets/images/57/슬라이드47.PNG" | relative_url }})#### ![슬라이드48.PNG]({{ "/assets/images/57/슬라이드48.PNG" | relative_url }})#### ![슬라이드49.PNG]({{ "/assets/images/57/슬라이드49.PNG" | relative_url }})#### ![슬라이드50.PNG]({{ "/assets/images/57/슬라이드50.PNG" | relative_url }})#### ![슬라이드51.PNG]({{ "/assets/images/57/슬라이드51.PNG" | relative_url }})#### ![슬라이드52.PNG]({{ "/assets/images/57/슬라이드52.PNG" | relative_url }})#### ![슬라이드53.PNG]({{ "/assets/images/57/슬라이드53.PNG" | relative_url }})#### ![슬라이드54.PNG]({{ "/assets/images/57/슬라이드54.PNG" | relative_url }})#### ![슬라이드55.PNG]({{ "/assets/images/57/슬라이드55.PNG" | relative_url }})#### ![슬라이드56.PNG]({{ "/assets/images/57/슬라이드56.PNG" | relative_url }})#### ![슬라이드57.PNG]({{ "/assets/images/57/슬라이드57.PNG" | relative_url }})#### ![슬라이드58.PNG]({{ "/assets/images/57/슬라이드58.PNG" | relative_url }})#### ![슬라이드59.PNG]({{ "/assets/images/57/슬라이드59.PNG" | relative_url }})#### ![슬라이드60.PNG]({{ "/assets/images/57/슬라이드60.PNG" | relative_url }})#### ![슬라이드61.PNG]({{ "/assets/images/57/슬라이드61.PNG" | relative_url }}) 공감sns신고저작자표시 
+
+
+

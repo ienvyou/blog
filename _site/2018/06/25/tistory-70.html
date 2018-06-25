@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Jira Project Administration | OpenSourceConsulting</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Jira Project Administration" />
+<meta name="author" content="OpenSourceConsulting" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="[Jira Project Administration]이제 앞에서 열심히 설정했던 내용들을 사용해볼 시간입니다. 아이씐나이쯤되면 까먹으셨을테니 다시 캡처를 첨부해보면, 만들었던 Web Customer Support로 들어간 뒤, 하단의 Project Administration을 클릭합니다. 그리고 다시 시작된 곶통.jpg 그럼 다음과 같은 화면이 나오며 좌측에 많이 본 듯한 메뉴가 존재합니다. (Subtask Templates의 경우 플러그인이 설치되어있기에 나타난 메뉴입니다)#### Summary: 우선 Summary부터 보시면 프로젝트의 설정 요약으로써, 해당 프로젝트가 어떤 설정들을 적용받고 있는지를 보여줍니다.#### #### 우측의 Edit Proejct를 클릭 시, 해당 프로젝트의 이름, 키값, 프로젝트 아바타 등을 변경할 수있는 팝업창이 생성됩니다.#### #### 그리고 옆의 Actions를 클릭 시 앞서 설명드렸듯이 프로젝트의 Software타입과 Business타입을 변경할 수 있는 메뉴와 #### 프로젝트 삭제, 인덱싱이 가능한 메뉴가 존재합니다. #### Issue types: 우측의 Actions를 누르면 Edit issue types과 Use a different scheme이 있는데, 여기서 Edit issue type을 누를 경우 해당 프로젝트가 적용받고 있는 Issue type scheme을 수정하도록 이동합니다. 이것이 이전 단계에서 모든 scheme들을 가능한 새로 만든 이유로써, 누군가 실수로 Default scheme을 수정할 경우 다른 모든 프로젝트도 영향을 받기 때문이죠. #### Use a different scheme을 클릭 후 앞서 잘 만들어둔 WCS Issue Type Scheme을 선택한 뒤 OK를 눌러줍니다.#### #### Workflows: Switch Scheme를 클릭 후 이 또한 잘 만들어둔 WCS Workflow Scheme로 바꿔줍니다.#### Screens / Fields: Issue type과 동일한 화면이므로 생략하겠습니다. Versions: Jira 이슈에 대해 간단한 버전관리를 할 수 있는 메뉴입니다. Version이나 다음에 나올 Component의 경우 필요에따라 사용하지 않아도 무방합니다.Version을 사용하기 전에 조건이 있는데,Project Type이 Software타입인지, Kanban이나 Scrum보드를 사용 중인지,Permission scheme에Administer Projects, Manage Sprint권한이 있는지 확인이 필요합니다. 우선 본 문서에서는 다음처럼 간단히 v1, v2의 버전 두 개를 추가해보겠습니다. #### #### 이후, 스크린에 Fix Versions라는 필드를 추가한 뒤, 이슈를 v1에 추가해줍니다. #### 하나의 이슈에 대해 Fix version은 하나만 할당해야만 하는 점에 주의하세요. 그렇지않으면 이후 릴리즈 시 #### 이슈 갯수가 꼬여서 보이거나 기타 문제가 발생할 가능성이 있습니다.추가 후, Project의 Releases 메뉴를 확인 시 다음처럼 v1에 이슈가 한 개 들어간 것을 확인할 수 있습니다. #### #### v1을 클릭 시 다음처럼 릴리즈 허브가 보여지며, 우측 상단의 Release를 클릭 시 팝업이 생성됩니다." />
+<meta property="og:description" content="[Jira Project Administration]이제 앞에서 열심히 설정했던 내용들을 사용해볼 시간입니다. 아이씐나이쯤되면 까먹으셨을테니 다시 캡처를 첨부해보면, 만들었던 Web Customer Support로 들어간 뒤, 하단의 Project Administration을 클릭합니다. 그리고 다시 시작된 곶통.jpg 그럼 다음과 같은 화면이 나오며 좌측에 많이 본 듯한 메뉴가 존재합니다. (Subtask Templates의 경우 플러그인이 설치되어있기에 나타난 메뉴입니다)#### Summary: 우선 Summary부터 보시면 프로젝트의 설정 요약으로써, 해당 프로젝트가 어떤 설정들을 적용받고 있는지를 보여줍니다.#### #### 우측의 Edit Proejct를 클릭 시, 해당 프로젝트의 이름, 키값, 프로젝트 아바타 등을 변경할 수있는 팝업창이 생성됩니다.#### #### 그리고 옆의 Actions를 클릭 시 앞서 설명드렸듯이 프로젝트의 Software타입과 Business타입을 변경할 수 있는 메뉴와 #### 프로젝트 삭제, 인덱싱이 가능한 메뉴가 존재합니다. #### Issue types: 우측의 Actions를 누르면 Edit issue types과 Use a different scheme이 있는데, 여기서 Edit issue type을 누를 경우 해당 프로젝트가 적용받고 있는 Issue type scheme을 수정하도록 이동합니다. 이것이 이전 단계에서 모든 scheme들을 가능한 새로 만든 이유로써, 누군가 실수로 Default scheme을 수정할 경우 다른 모든 프로젝트도 영향을 받기 때문이죠. #### Use a different scheme을 클릭 후 앞서 잘 만들어둔 WCS Issue Type Scheme을 선택한 뒤 OK를 눌러줍니다.#### #### Workflows: Switch Scheme를 클릭 후 이 또한 잘 만들어둔 WCS Workflow Scheme로 바꿔줍니다.#### Screens / Fields: Issue type과 동일한 화면이므로 생략하겠습니다. Versions: Jira 이슈에 대해 간단한 버전관리를 할 수 있는 메뉴입니다. Version이나 다음에 나올 Component의 경우 필요에따라 사용하지 않아도 무방합니다.Version을 사용하기 전에 조건이 있는데,Project Type이 Software타입인지, Kanban이나 Scrum보드를 사용 중인지,Permission scheme에Administer Projects, Manage Sprint권한이 있는지 확인이 필요합니다. 우선 본 문서에서는 다음처럼 간단히 v1, v2의 버전 두 개를 추가해보겠습니다. #### #### 이후, 스크린에 Fix Versions라는 필드를 추가한 뒤, 이슈를 v1에 추가해줍니다. #### 하나의 이슈에 대해 Fix version은 하나만 할당해야만 하는 점에 주의하세요. 그렇지않으면 이후 릴리즈 시 #### 이슈 갯수가 꼬여서 보이거나 기타 문제가 발생할 가능성이 있습니다.추가 후, Project의 Releases 메뉴를 확인 시 다음처럼 v1에 이슈가 한 개 들어간 것을 확인할 수 있습니다. #### #### v1을 클릭 시 다음처럼 릴리즈 허브가 보여지며, 우측 상단의 Release를 클릭 시 팝업이 생성됩니다." />
+<link rel="canonical" href="http://localhost:4000/blog/2018/06/25/tistory-70.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2018/06/25/tistory-70.html" />
+<meta property="og:site_name" content="OpenSourceConsulting" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-25T09:15:36+09:00" />
+<script type="application/ld+json">
+{"description":"[Jira Project Administration]이제 앞에서 열심히 설정했던 내용들을 사용해볼 시간입니다. 아이씐나이쯤되면 까먹으셨을테니 다시 캡처를 첨부해보면, 만들었던 Web Customer Support로 들어간 뒤, 하단의 Project Administration을 클릭합니다. 그리고 다시 시작된 곶통.jpg 그럼 다음과 같은 화면이 나오며 좌측에 많이 본 듯한 메뉴가 존재합니다. (Subtask Templates의 경우 플러그인이 설치되어있기에 나타난 메뉴입니다)#### Summary: 우선 Summary부터 보시면 프로젝트의 설정 요약으로써, 해당 프로젝트가 어떤 설정들을 적용받고 있는지를 보여줍니다.#### #### 우측의 Edit Proejct를 클릭 시, 해당 프로젝트의 이름, 키값, 프로젝트 아바타 등을 변경할 수있는 팝업창이 생성됩니다.#### #### 그리고 옆의 Actions를 클릭 시 앞서 설명드렸듯이 프로젝트의 Software타입과 Business타입을 변경할 수 있는 메뉴와 #### 프로젝트 삭제, 인덱싱이 가능한 메뉴가 존재합니다. #### Issue types: 우측의 Actions를 누르면 Edit issue types과 Use a different scheme이 있는데, 여기서 Edit issue type을 누를 경우 해당 프로젝트가 적용받고 있는 Issue type scheme을 수정하도록 이동합니다. 이것이 이전 단계에서 모든 scheme들을 가능한 새로 만든 이유로써, 누군가 실수로 Default scheme을 수정할 경우 다른 모든 프로젝트도 영향을 받기 때문이죠. #### Use a different scheme을 클릭 후 앞서 잘 만들어둔 WCS Issue Type Scheme을 선택한 뒤 OK를 눌러줍니다.#### #### Workflows: Switch Scheme를 클릭 후 이 또한 잘 만들어둔 WCS Workflow Scheme로 바꿔줍니다.#### Screens / Fields: Issue type과 동일한 화면이므로 생략하겠습니다. Versions: Jira 이슈에 대해 간단한 버전관리를 할 수 있는 메뉴입니다. Version이나 다음에 나올 Component의 경우 필요에따라 사용하지 않아도 무방합니다.Version을 사용하기 전에 조건이 있는데,Project Type이 Software타입인지, Kanban이나 Scrum보드를 사용 중인지,Permission scheme에Administer Projects, Manage Sprint권한이 있는지 확인이 필요합니다. 우선 본 문서에서는 다음처럼 간단히 v1, v2의 버전 두 개를 추가해보겠습니다. #### #### 이후, 스크린에 Fix Versions라는 필드를 추가한 뒤, 이슈를 v1에 추가해줍니다. #### 하나의 이슈에 대해 Fix version은 하나만 할당해야만 하는 점에 주의하세요. 그렇지않으면 이후 릴리즈 시 #### 이슈 갯수가 꼬여서 보이거나 기타 문제가 발생할 가능성이 있습니다.추가 후, Project의 Releases 메뉴를 확인 시 다음처럼 v1에 이슈가 한 개 들어간 것을 확인할 수 있습니다. #### #### v1을 클릭 시 다음처럼 릴리즈 허브가 보여지며, 우측 상단의 Release를 클릭 시 팝업이 생성됩니다.","author":{"@type":"Person","name":"OpenSourceConsulting"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2018/06/25/tistory-70.html","headline":"Jira Project Administration","dateModified":"2018-06-25T09:15:36+09:00","datePublished":"2018-06-25T09:15:36+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2018/06/25/tistory-70.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png"<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="OpenSourceConsulting" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">OpenSourceConsulting</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Jira Project Administration</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-06-25T09:15:36+09:00" itemprop="datePublished">Jun 25, 2018
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">OpenSourceConsulting</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>[Jira Project Administration]이제 앞에서 열심히 설정했던 내용들을 사용해볼 시간입니다. 아이씐나이쯤되면 까먹으셨을테니 다시 캡처를 첨부해보면, 만들었던 Web Customer Support로 들어간 뒤, 하단의 Project Administration을 클릭합니다. <img src="/blog/assets/images/70/0.png" alt="0.png" />그리고 다시 시작된 곶통.jpg 그럼 다음과 같은 화면이 나오며 좌측에 많이 본 듯한 메뉴가 존재합니다. (Subtask Templates의 경우 플러그인이 설치되어있기에 나타난 메뉴입니다)#### Summary: 우선 Summary부터 보시면 프로젝트의 설정 요약으로써, 해당 프로젝트가 어떤 설정들을 적용받고 있는지를 보여줍니다.#### <img src="/blog/assets/images/70/1.png" alt="1.png" />#### 우측의 Edit Proejct를 클릭 시, 해당 프로젝트의 이름, 키값, 프로젝트 아바타 등을 변경할 수있는 팝업창이 생성됩니다.#### <img src="/blog/assets/images/70/2.png" alt="2.png" />#### 그리고 옆의 Actions를 클릭 시 앞서 설명드렸듯이 프로젝트의 Software타입과 Business타입을 변경할 수 있는 메뉴와 #### 프로젝트 삭제, 인덱싱이 가능한 메뉴가 존재합니다. #### <img src="/blog/assets/images/70/3.png" alt="3.png" />Issue types: 우측의 Actions를 누르면 Edit issue types과 Use a different scheme이 있는데, 여기서 Edit issue type을 누를 경우 해당 프로젝트가 적용받고 있는 Issue type scheme을 수정하도록 이동합니다. 이것이 이전 단계에서 모든 scheme들을 가능한 새로 만든 이유로써, 누군가 실수로 Default scheme을 수정할 경우 다른 모든 프로젝트도 영향을 받기 때문이죠. <img src="/blog/assets/images/70/4.png" alt="4.png" />#### Use a different scheme을 클릭 후 앞서 잘 만들어둔 WCS Issue Type Scheme을 선택한 뒤 OK를 눌러줍니다.#### <img src="/blog/assets/images/70/5.png" alt="5.png" />#### Workflows: Switch Scheme를 클릭 후 이 또한 잘 만들어둔 WCS Workflow Scheme로 바꿔줍니다.#### <img src="/blog/assets/images/70/6.png" alt="6.png" />Screens / Fields: Issue type과 동일한 화면이므로 생략하겠습니다. Versions: Jira 이슈에 대해 간단한 버전관리를 할 수 있는 메뉴입니다. Version이나 다음에 나올 Component의 경우 필요에따라 사용하지 않아도 무방합니다.Version을 사용하기 전에 조건이 있는데,Project Type이 Software타입인지, Kanban이나 Scrum보드를 사용 중인지,Permission scheme에Administer Projects, Manage Sprint권한이 있는지 확인이 필요합니다. 우선 본 문서에서는 다음처럼 간단히 v1, v2의 버전 두 개를 추가해보겠습니다. #### <img src="/blog/assets/images/70/7.png" alt="7.png" />#### 이후, 스크린에 Fix Versions라는 필드를 추가한 뒤, 이슈를 v1에 추가해줍니다. #### 하나의 이슈에 대해 Fix version은 하나만 할당해야만 하는 점에 주의하세요. 그렇지않으면 이후 릴리즈 시 #### 이슈 갯수가 꼬여서 보이거나 기타 문제가 발생할 가능성이 있습니다.<img src="/blog/assets/images/70/8.png" alt="8.png" />추가 후, Project의 Releases 메뉴를 확인 시 다음처럼 v1에 이슈가 한 개 들어간 것을 확인할 수 있습니다. #### <img src="/blog/assets/images/70/0.png" alt="0.png" />#### v1을 클릭 시 다음처럼 릴리즈 허브가 보여지며, 우측 상단의 Release를 클릭 시 팝업이 생성됩니다.</p>
+
+<h4 id="-한-개의-덜-완료된-이슈에-대해-무시하고-릴리즈할-것인지-다음버전으로-넘길-것인지를-확인하며-여기서-넘길-것을-선택하고-릴리즈-시"><img src="/blog/assets/images/70/1.png" alt="1.png" />#### 한 개의 덜 완료된 이슈에 대해 무시하고 릴리즈할 것인지, 다음버전으로 넘길 것인지를 확인하며 여기서 넘길 것을 선택하고 릴리즈 시,</h4>
+
+<h4 id="-이렇게-v2로-해당-이슈가-넘어간-것을-확인할-수-있습니다-componenents-project와-issue사이에-논리적으로-하나의-단계를-두기-위해-사용하는-기능입니다쉽게-말해서-핸드폰-앱을-개발한다는-가정하에-앱-개발을-프로젝트로-두고component에-android와-iphone으로-구분하는-것을-생각하시면-됩니다-component또한-version과-마찬가지로-간단히-입력하여-추가가-가능하며-버전과-같은-조건은-필요하지-않습니다다음처럼-추가하시면-되며-default-assignee를-설정-시-이슈를-생성할-때-해당-component를-선택하면자동으로-해당-이슈의-assignee가-component-lead에게-할당되도록-설정할-수-있습니다-그리고-물론-이-또한-스크린에서-component필드를-추가해주어야합니다user-and-roles-권한관리를-조금-더-세분화할-때-사용하는-메뉴로-굳이-따지자면-그룹보다-한-단계-상위로-보시면됩니다물론-이-또한-반드시-사용해야하는-메뉴는-아닙니다우선-다음-화면에서-우측-상단의-edit-defaults를-눌러보시면-팝업창이-하나-생성됩니다-보시면-현재-프로젝트의-project-lead와-default-assignee를-변경할-수-있으며default-assignee를-project-lead로-설정-시담당자를-지정하지-않은-모든-이슈는-project-lead에게-할당됩니다마음에들지-않는-사람이-있다면-설정하여-메일-폭탄을-선물해보세요--그-옆의-add-users-to-role을-선택-시-다음처럼-role에-사용자나-그룹을-할당할-수-있으며-이-role은-jira-administrataion---system---project-roles에서-관리가능합니다--permissions--issue-security--notifications-앞서나온-issue-type과-설정방법이-같기에-생략합니다hipchat-integration-atlassian의-업무-sns솔루션인-hipchat과의-연동을-위한-메뉴입니다slack과의-기능상의-큰-차이는-없으나-대중성에서-밀린-비운의-툴이죠어차피-slack과의-연동-또한-플러그인으로-되므로-큰-의미는-없습니다만development-tools-atlassian의-타-솔루션인-bamboo-fisheye등과의-연동을-위한-메뉴입니다issue-collectors-jira-이슈에-대한-피드백을-받기위한-메뉴로-내부-jira계정을-이용하여-설정-시-만들어지는-html이나java-script코드를-타겟-웹사이트에-심어-피드백을-받을-수-있도록-설정하는-메뉴입니다마지막으로-위에서-적용한-설정을-검증해보도록-하겠습니다우선-task-이슈타입으로-이슈-생성-시-다음과-같이-기존-default스크린으로-많은-필드들이-보여집니다-그럼-이슈타입을-web-bug로-바꿔보면-어떨까요-보시다시피-시스템적으로-반드시-들어가는-proejct와issue-type을-제외하고-설정하였던-다섯가지의-필드만-보여지는-것을-확인할-수-있습니다필수값으로-변경하였었던-web-bug-browser-type도-잘-적용되고-있네요만들어진-이후-view-workflow를-확인-시-워크플로우-또한-새로-만든-워크플로우가-잘-적용됨을-확인할-수-있습니다-이로써-jira-설정에-대한-기본-가이드를-정리해보았습니다-이쯤되면-아시겠지만-딱히-어렵기보단-굉장히-귀찮은-작업입니다한-번-만들어두면-그-이후엔-나쁘지않으나-초기-세팅시에는-할-일이-꽤나-많죠뒤로-갈수록-재미없어지는-글을-읽으시느라-고생많으셨고-처음-jira를-접하고-관리하셔야하는-분들에게-도움이-되었으면-좋겠습니다언제가-될-지는-모르나-다음에-기회가-된다면confluence의-overview-및-설정도-작성해보도록하겠습니다-공감sns신고"><img src="/blog/assets/images/70/2.png" alt="2.png" />#### 이렇게 v2로 해당 이슈가 넘어간 것을 확인할 수 있습니다.#### <img src="/blog/assets/images/70/3.png" alt="3.png" />Componenents: Project와 Issue사이에 논리적으로 하나의 단계를 두기 위해 사용하는 기능입니다. 쉽게 말해서 핸드폰 앱을 개발한다는 가정하에 앱 개발을 프로젝트로 두고, Component에 Android와 Iphone으로 구분하는 것을 생각하시면 됩니다.  Component또한 Version과 마찬가지로 간단히 입력하여 추가가 가능하며, 버전과 같은 조건은 필요하지 않습니다. 다음처럼 추가하시면 되며, Default Assignee를 설정 시 이슈를 생성할 때 해당 Component를 선택하면 자동으로 해당 이슈의 Assignee가 Component Lead에게 할당되도록 설정할 수 있습니다. #### <img src="/blog/assets/images/70/4.png" alt="4.png" />그리고 물론 이 또한 스크린에서 Component필드를 추가해주어야합니다.<img src="/blog/assets/images/70/5.png" alt="5.png" />User and roles: 권한관리를 조금 더 세분화할 때 사용하는 메뉴로,  굳이 따지자면 그룹보다 한 단계 상위로 보시면됩니다.물론 이 또한 반드시 사용해야하는 메뉴는 아닙니다. 우선 다음 화면에서 우측 상단의 Edit defaults를 눌러보시면 팝업창이 하나 생성됩니다. #### <img src="/blog/assets/images/70/6.png" alt="6.png" />보시면 현재 프로젝트의 Project Lead와 Default Assignee를 변경할 수 있으며, Default Assignee를 Project Lead로 설정 시 담당자를 지정하지 않은 모든 이슈는 Project Lead에게 할당됩니다. 마음에들지 않는 사람이 있다면 설정하여 메일 폭탄을 선물해보세요#### <img src="/blog/assets/images/70/7.png" alt="7.png" />#### 그 옆의 Add users to role을 선택 시 다음처럼 role에 사용자나 그룹을 할당할 수 있으며, 이 role은#### Jira Administrataion - System - Project roles에서 관리가능합니다.#### <img src="/blog/assets/images/70/8.png" alt="8.png" />#### Permissions / Issue Security / Notifications: 앞서나온 issue type과 설정방법이 같기에 생략합니다. HipChat integration: Atlassian의 업무 SNS솔루션인 Hipchat과의 연동을 위한 메뉴입니다. Slack과의 기능상의 큰 차이는 없으나 대중성에서 밀린 비운의 툴이죠. 어차피 slack과의 연동 또한 플러그인으로 되므로 큰 의미는 없습니다만…Development tools: Atlassian의 타 솔루션인 Bamboo, Fisheye등과의 연동을 위한 메뉴입니다. Issue collectors: Jira 이슈에 대한 피드백을 받기위한 메뉴로, 내부 Jira계정을 이용하여 설정 시 만들어지는 html이나java script코드를 타겟 웹사이트에 심어 피드백을 받을 수 있도록 설정하는 메뉴입니다. 마지막으로 위에서 적용한 설정을 검증해보도록 하겠습니다. 우선 Task 이슈타입으로 이슈 생성 시, 다음과 같이 기존 Default스크린으로 많은 필드들이 보여집니다. #### <img src="/blog/assets/images/70/9.png" alt="9.png" />그럼 이슈타입을 Web Bug로 바꿔보면 어떨까요? 보시다시피 시스템적으로 반드시 들어가는 Proejct와Issue Type을 제외하고 설정하였던 다섯가지의 필드만 보여지는 것을 확인할 수 있습니다. 필수값으로 변경하였었던 Web Bug Browser Type도 잘 적용되고 있네요. 만들어진 이후 View Workflow를 확인 시 워크플로우 또한 새로 만든 워크플로우가 잘 적용됨을 확인할 수 있습니다. #### <img src="/blog/assets/images/70/10.png" alt="10.png" />이로써, Jira 설정에 대한 기본 가이드를 정리해보았습니다. 이쯤되면 아시겠지만 딱히 어렵기보단 굉장히 귀찮은 작업입니다. 한 번 만들어두면 그 이후엔 나쁘지않으나 초기 세팅시에는 할 일이 꽤나 많죠. 뒤로 갈수록 재미없어지는 글을 읽으시느라 고생많으셨고, 처음 Jira를 접하고 관리하셔야하는 분들에게 도움이 되었으면 좋겠습니다. 언제가 될 지는 모르나, 다음에 기회가 된다면 Confluence의 Overview 및 설정도 작성해보도록하겠습니다.  공감sns신고</h4>
+
+
+  </div><a class="u-url" href="/blog/2018/06/25/tistory-70.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">OpenSourceConsulting</li><li><a class="u-email" href="mailto:sales@osci.kr">sales@osci.kr</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-1"><ul class="social-media-list"><li><a href="https://github.com/OpenSourceConsulting"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">OpenSourceConsulting</span></a></li></ul>
+</div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -44,6 +44,7 @@ main {
  * Images
  */
 img {
+  display: inherit;
   max-width: 100%;
   vertical-align: middle; }
 

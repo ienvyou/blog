@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Jira 개요 | OpenSourceConsulting</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Jira 개요" />
+<meta name="author" content="OpenSourceConsulting" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="안녕하세요. 오픈소스컨설팅 전갑일입니다. #### 오늘부터 Jira라는 솔루션에 대한 글을 작성해보려합니다. 물론 이게 얼마나 갈지는 저도 잘 모릅니다.우선 본 문서는 Atlassian 회사의 제품 중 대표적인 제품인 Jira에 대하여 처음 접하는 사용자 또는 관리자를 대상으로 작성된 문서입니다. 기본설치부터 간단한 설정까지를 다룰 예정이며 상세한 설명보다는 미세한 팁 정도로 기술합니다.(의식의 흐름 기법을 사용하였기에 보기에 불편할 수 있습니다)[Overview]우선 Atlassian은 호주에 본사가 있는 외국계 기업으로서 회사 자체의 이름보다는 Jira 라는 솔루션이 더 유명한 회사입니다. 일반적으로 Atlassian은 몰라도 Jira는 아시는 분들이 많죠. 주로 Jira와 같이 연동하여 사용하는 Jira 못지않은 활용도를 자랑하는 Confluence라는 또 다른 제품도 있지만 이는 다음 기회에 적어보겠습니다. 애초에 사용처가 좀 다르긴 하지만 어찌보면 개발자가 아니신 분들에게는 Jira보다도 활용도가 높은 툴이라고 볼 수도 있습니다. 본론으로 돌아와서 Jira에 대해서 이야기하자면, 현재 최신은 7.3버전까지 존재하며, 개인적으로 많이 다루어본 것이 메이저 버전 6.4이후부터이기에 그 쯤에서 이야기를 시작하겠습니다. 여타 솔루션들이 그렇듯이, 메이저 버전이 업데이트 될 경우 대격변이라고 할 만큼 많은 변화가 생기는데 Jira또한 6.4에서 7.0으로 변경되며많은 변화가 있었습니다. 상세한 기능들은 필요하실 경우 각 버전별 릴리즈 노트에서 확인하시면 되며, 하나의 대표적인 예로써, 간단히 6버전의 Jira가 Jira Core로, Jira + Agile이 Jira Software로, Jira + ServiceDesk가 Jira ServiceDesk라는 솔루션으로 변경되었죠.기능상의 차이로는,Core는 의미 그대로 Jira의 기본 기능을 가진 Jira 인스턴스Software는 Core에 Software type의 프로젝트 생성 및 보드(Agile, KANBAN)기능이 추가ServiceDesk는 Core에 ServiceDesk기능(Email Request처리, Customer Portal)이 추가정도로 보시면 됩니다. (사실상 이름만 변경)또한 7버전에서부터는 위의 세 가지 솔루션을 Jira 인스턴스의 Versions &amp; licenses 메뉴부분에서 통합적으로 관리하게되어,필요할 경우 라이선스키를 입력, 삭제하는 방법으로 간편히 제어할 수 있도록 변경되었습니다. #### 그림에서 보다시피, Core, Software, ServiceDesk가 각각 따로 존재하는 것을 볼 수 있으며 아예 설치되지 않은 ServiceDesk의 경우 Try it for free를 통해 설치가 바로 가능합니다. 이쯤되면  “이미 Software 라이선스가 있는 상황에서 Core의 구매가 필요한가?” “Core가 이미 있는데 Software를 사야하나?” 같은 의문이 생길 수 있는데, 답은 “필요에 따라서” 라고 볼 수 있습니다. 간단히 말해 Core의 기능을 사용할 수 있는 사용자 수와 Software의 기능을 사용할 수 있는 사용자 수는 별개로예를 들어 Core 라이선스 100유저, Software 라이선스 50유저를 구매 시 100유저는 기본적인 기능들을, 50유저는 Agile 보드 등의 추가 기능을 사용할 수 있다고 생각하면 됩니다. 이는 위 그림에서 Application Access메뉴를 통해 제어가 가능합니다. 라이선스의 가격은 당연히(?)Core, Software, ServiceDesk 순으로 비싸집니다. 가격 이야기가 나온 김에 잠깐 라이선스에 대해 짚고 넘어가자면, Atlassian은 기본적으로 사용자 수를 기준으로 라이선스 가격을 측정하고 있으며, 50유저 -&gt; 100유저와 같이 상위 라이선스로 업그레이드는 일정 비용의 추가로 업그레이드가 가능합니다.다만, 반대의 경우 새로 라이선스를 구매해야하는 단점이 있습니다. (올릴 때는 마음대로였겠지만 내릴 땐…)사용자 수에 따른 가격은 Atlassian 홈페이지에 잘 정리되어 있으므로 넘어가겠습니다. 라이선스 정책 자체는 라이선스 구매 시 퍼펙트 라이선스로, 기간이 만료되어도(구매로부터 1년)그대로 사용은 가능합니다. 다만 페널티가 두 가지 있는데 Atlassian의 공식 Support를 지원받지 못하는 것과, 이후 릴리즈되는 버전에 대해 업그레이드가 불가능한 점이 있습니다. 여담으로 10유저의 경우 지불하는 만원 가량의 비용은 Atlassian의 수익이 아닌 기부금으로 들어간다고하므로, 10유저 정도를 구매하여 테스트로 사용하는 것도 좋은 방법입니다. (별다방 커피 두 잔 정도면…)그럼 다음편에선 실제 설치로 넘어가보도록 하겠습니다.  공감sns신고" />
+<meta property="og:description" content="안녕하세요. 오픈소스컨설팅 전갑일입니다. #### 오늘부터 Jira라는 솔루션에 대한 글을 작성해보려합니다. 물론 이게 얼마나 갈지는 저도 잘 모릅니다.우선 본 문서는 Atlassian 회사의 제품 중 대표적인 제품인 Jira에 대하여 처음 접하는 사용자 또는 관리자를 대상으로 작성된 문서입니다. 기본설치부터 간단한 설정까지를 다룰 예정이며 상세한 설명보다는 미세한 팁 정도로 기술합니다.(의식의 흐름 기법을 사용하였기에 보기에 불편할 수 있습니다)[Overview]우선 Atlassian은 호주에 본사가 있는 외국계 기업으로서 회사 자체의 이름보다는 Jira 라는 솔루션이 더 유명한 회사입니다. 일반적으로 Atlassian은 몰라도 Jira는 아시는 분들이 많죠. 주로 Jira와 같이 연동하여 사용하는 Jira 못지않은 활용도를 자랑하는 Confluence라는 또 다른 제품도 있지만 이는 다음 기회에 적어보겠습니다. 애초에 사용처가 좀 다르긴 하지만 어찌보면 개발자가 아니신 분들에게는 Jira보다도 활용도가 높은 툴이라고 볼 수도 있습니다. 본론으로 돌아와서 Jira에 대해서 이야기하자면, 현재 최신은 7.3버전까지 존재하며, 개인적으로 많이 다루어본 것이 메이저 버전 6.4이후부터이기에 그 쯤에서 이야기를 시작하겠습니다. 여타 솔루션들이 그렇듯이, 메이저 버전이 업데이트 될 경우 대격변이라고 할 만큼 많은 변화가 생기는데 Jira또한 6.4에서 7.0으로 변경되며많은 변화가 있었습니다. 상세한 기능들은 필요하실 경우 각 버전별 릴리즈 노트에서 확인하시면 되며, 하나의 대표적인 예로써, 간단히 6버전의 Jira가 Jira Core로, Jira + Agile이 Jira Software로, Jira + ServiceDesk가 Jira ServiceDesk라는 솔루션으로 변경되었죠.기능상의 차이로는,Core는 의미 그대로 Jira의 기본 기능을 가진 Jira 인스턴스Software는 Core에 Software type의 프로젝트 생성 및 보드(Agile, KANBAN)기능이 추가ServiceDesk는 Core에 ServiceDesk기능(Email Request처리, Customer Portal)이 추가정도로 보시면 됩니다. (사실상 이름만 변경)또한 7버전에서부터는 위의 세 가지 솔루션을 Jira 인스턴스의 Versions &amp; licenses 메뉴부분에서 통합적으로 관리하게되어,필요할 경우 라이선스키를 입력, 삭제하는 방법으로 간편히 제어할 수 있도록 변경되었습니다. #### 그림에서 보다시피, Core, Software, ServiceDesk가 각각 따로 존재하는 것을 볼 수 있으며 아예 설치되지 않은 ServiceDesk의 경우 Try it for free를 통해 설치가 바로 가능합니다. 이쯤되면  “이미 Software 라이선스가 있는 상황에서 Core의 구매가 필요한가?” “Core가 이미 있는데 Software를 사야하나?” 같은 의문이 생길 수 있는데, 답은 “필요에 따라서” 라고 볼 수 있습니다. 간단히 말해 Core의 기능을 사용할 수 있는 사용자 수와 Software의 기능을 사용할 수 있는 사용자 수는 별개로예를 들어 Core 라이선스 100유저, Software 라이선스 50유저를 구매 시 100유저는 기본적인 기능들을, 50유저는 Agile 보드 등의 추가 기능을 사용할 수 있다고 생각하면 됩니다. 이는 위 그림에서 Application Access메뉴를 통해 제어가 가능합니다. 라이선스의 가격은 당연히(?)Core, Software, ServiceDesk 순으로 비싸집니다. 가격 이야기가 나온 김에 잠깐 라이선스에 대해 짚고 넘어가자면, Atlassian은 기본적으로 사용자 수를 기준으로 라이선스 가격을 측정하고 있으며, 50유저 -&gt; 100유저와 같이 상위 라이선스로 업그레이드는 일정 비용의 추가로 업그레이드가 가능합니다.다만, 반대의 경우 새로 라이선스를 구매해야하는 단점이 있습니다. (올릴 때는 마음대로였겠지만 내릴 땐…)사용자 수에 따른 가격은 Atlassian 홈페이지에 잘 정리되어 있으므로 넘어가겠습니다. 라이선스 정책 자체는 라이선스 구매 시 퍼펙트 라이선스로, 기간이 만료되어도(구매로부터 1년)그대로 사용은 가능합니다. 다만 페널티가 두 가지 있는데 Atlassian의 공식 Support를 지원받지 못하는 것과, 이후 릴리즈되는 버전에 대해 업그레이드가 불가능한 점이 있습니다. 여담으로 10유저의 경우 지불하는 만원 가량의 비용은 Atlassian의 수익이 아닌 기부금으로 들어간다고하므로, 10유저 정도를 구매하여 테스트로 사용하는 것도 좋은 방법입니다. (별다방 커피 두 잔 정도면…)그럼 다음편에선 실제 설치로 넘어가보도록 하겠습니다.  공감sns신고" />
+<link rel="canonical" href="http://localhost:4000/blog/2018/06/25/tistory-59.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2018/06/25/tistory-59.html" />
+<meta property="og:site_name" content="OpenSourceConsulting" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-25T09:15:36+09:00" />
+<script type="application/ld+json">
+{"description":"안녕하세요. 오픈소스컨설팅 전갑일입니다. #### 오늘부터 Jira라는 솔루션에 대한 글을 작성해보려합니다. 물론 이게 얼마나 갈지는 저도 잘 모릅니다.우선 본 문서는 Atlassian 회사의 제품 중 대표적인 제품인 Jira에 대하여 처음 접하는 사용자 또는 관리자를 대상으로 작성된 문서입니다. 기본설치부터 간단한 설정까지를 다룰 예정이며 상세한 설명보다는 미세한 팁 정도로 기술합니다.(의식의 흐름 기법을 사용하였기에 보기에 불편할 수 있습니다)[Overview]우선 Atlassian은 호주에 본사가 있는 외국계 기업으로서 회사 자체의 이름보다는 Jira 라는 솔루션이 더 유명한 회사입니다. 일반적으로 Atlassian은 몰라도 Jira는 아시는 분들이 많죠. 주로 Jira와 같이 연동하여 사용하는 Jira 못지않은 활용도를 자랑하는 Confluence라는 또 다른 제품도 있지만 이는 다음 기회에 적어보겠습니다. 애초에 사용처가 좀 다르긴 하지만 어찌보면 개발자가 아니신 분들에게는 Jira보다도 활용도가 높은 툴이라고 볼 수도 있습니다. 본론으로 돌아와서 Jira에 대해서 이야기하자면, 현재 최신은 7.3버전까지 존재하며, 개인적으로 많이 다루어본 것이 메이저 버전 6.4이후부터이기에 그 쯤에서 이야기를 시작하겠습니다. 여타 솔루션들이 그렇듯이, 메이저 버전이 업데이트 될 경우 대격변이라고 할 만큼 많은 변화가 생기는데 Jira또한 6.4에서 7.0으로 변경되며많은 변화가 있었습니다. 상세한 기능들은 필요하실 경우 각 버전별 릴리즈 노트에서 확인하시면 되며, 하나의 대표적인 예로써, 간단히 6버전의 Jira가 Jira Core로, Jira + Agile이 Jira Software로, Jira + ServiceDesk가 Jira ServiceDesk라는 솔루션으로 변경되었죠.기능상의 차이로는,Core는 의미 그대로 Jira의 기본 기능을 가진 Jira 인스턴스Software는 Core에 Software type의 프로젝트 생성 및 보드(Agile, KANBAN)기능이 추가ServiceDesk는 Core에 ServiceDesk기능(Email Request처리, Customer Portal)이 추가정도로 보시면 됩니다. (사실상 이름만 변경)또한 7버전에서부터는 위의 세 가지 솔루션을 Jira 인스턴스의 Versions &amp; licenses 메뉴부분에서 통합적으로 관리하게되어,필요할 경우 라이선스키를 입력, 삭제하는 방법으로 간편히 제어할 수 있도록 변경되었습니다. #### 그림에서 보다시피, Core, Software, ServiceDesk가 각각 따로 존재하는 것을 볼 수 있으며 아예 설치되지 않은 ServiceDesk의 경우 Try it for free를 통해 설치가 바로 가능합니다. 이쯤되면  “이미 Software 라이선스가 있는 상황에서 Core의 구매가 필요한가?” “Core가 이미 있는데 Software를 사야하나?” 같은 의문이 생길 수 있는데, 답은 “필요에 따라서” 라고 볼 수 있습니다. 간단히 말해 Core의 기능을 사용할 수 있는 사용자 수와 Software의 기능을 사용할 수 있는 사용자 수는 별개로예를 들어 Core 라이선스 100유저, Software 라이선스 50유저를 구매 시 100유저는 기본적인 기능들을, 50유저는 Agile 보드 등의 추가 기능을 사용할 수 있다고 생각하면 됩니다. 이는 위 그림에서 Application Access메뉴를 통해 제어가 가능합니다. 라이선스의 가격은 당연히(?)Core, Software, ServiceDesk 순으로 비싸집니다. 가격 이야기가 나온 김에 잠깐 라이선스에 대해 짚고 넘어가자면, Atlassian은 기본적으로 사용자 수를 기준으로 라이선스 가격을 측정하고 있으며, 50유저 -&gt; 100유저와 같이 상위 라이선스로 업그레이드는 일정 비용의 추가로 업그레이드가 가능합니다.다만, 반대의 경우 새로 라이선스를 구매해야하는 단점이 있습니다. (올릴 때는 마음대로였겠지만 내릴 땐…)사용자 수에 따른 가격은 Atlassian 홈페이지에 잘 정리되어 있으므로 넘어가겠습니다. 라이선스 정책 자체는 라이선스 구매 시 퍼펙트 라이선스로, 기간이 만료되어도(구매로부터 1년)그대로 사용은 가능합니다. 다만 페널티가 두 가지 있는데 Atlassian의 공식 Support를 지원받지 못하는 것과, 이후 릴리즈되는 버전에 대해 업그레이드가 불가능한 점이 있습니다. 여담으로 10유저의 경우 지불하는 만원 가량의 비용은 Atlassian의 수익이 아닌 기부금으로 들어간다고하므로, 10유저 정도를 구매하여 테스트로 사용하는 것도 좋은 방법입니다. (별다방 커피 두 잔 정도면…)그럼 다음편에선 실제 설치로 넘어가보도록 하겠습니다.  공감sns신고","author":{"@type":"Person","name":"OpenSourceConsulting"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2018/06/25/tistory-59.html","headline":"Jira 개요","dateModified":"2018-06-25T09:15:36+09:00","datePublished":"2018-06-25T09:15:36+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2018/06/25/tistory-59.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png"<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="OpenSourceConsulting" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">OpenSourceConsulting</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Jira 개요</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-06-25T09:15:36+09:00" itemprop="datePublished">Jun 25, 2018
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">OpenSourceConsulting</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="안녕하세요-오픈소스컨설팅-전갑일입니다-오늘부터-jira라는-솔루션에-대한글을-작성해보려합니다-물론-이게-얼마나-갈지는-저도-잘-모릅니다우선-본-문서는-atlassian-회사의-제품-중-대표적인-제품인-jira에-대하여-처음-접하는-사용자-또는-관리자를-대상으로-작성된-문서입니다기본설치부터-간단한-설정까지를-다룰-예정이며상세한-설명보다는-미세한-팁-정도로-기술합니다의식의-흐름-기법을-사용하였기에-보기에-불편할-수-있습니다overview우선-atlassian은-호주에-본사가-있는-외국계-기업으로서-회사-자체의-이름보다는-jira-라는-솔루션이-더-유명한-회사입니다일반적으로-atlassian은-몰라도-jira는-아시는-분들이-많죠-주로-jira와-같이-연동하여-사용하는-jira-못지않은-활용도를-자랑하는confluence라는-또-다른-제품도-있지만-이는-다음-기회에-적어보겠습니다애초에-사용처가-좀-다르긴-하지만-어찌보면-개발자가-아니신-분들에게는-jira보다도-활용도가-높은-툴이라고-볼-수도-있습니다본론으로-돌아와서-jira에-대해서-이야기하자면-현재-최신은-73버전까지-존재하며-개인적으로-많이-다루어본-것이메이저-버전-64이후부터이기에그-쯤에서-이야기를-시작하겠습니다여타-솔루션들이-그렇듯이-메이저-버전이-업데이트-될-경우-대격변이라고-할-만큼-많은-변화가-생기는데-jira또한-64에서-70으로-변경되며많은-변화가-있었습니다-상세한-기능들은-필요하실-경우-각-버전별-릴리즈-노트에서-확인하시면-되며-하나의대표적인-예로써간단히-6버전의-jira가-jira-core로jira--agile이-jira-software로-jira--servicedesk가-jira-servicedesk라는-솔루션으로-변경되었죠기능상의-차이로는core는-의미-그대로-jira의-기본-기능을-가진-jira-인스턴스software는-core에-software-type의-프로젝트-생성-및-보드agile-kanban기능이-추가servicedesk는-core에-servicedesk기능email-request처리-customer-portal이-추가정도로-보시면-됩니다사실상-이름만-변경또한-7버전에서부터는-위의-세-가지-솔루션을-jira-인스턴스의versions--licenses-메뉴부분에서-통합적으로-관리하게되어필요할-경우-라이선스키를-입력-삭제하는-방법으로-간편히-제어할-수-있도록-변경되었습니다-그림에서-보다시피-core-software-servicedesk가-각각-따로-존재하는-것을-볼-수-있으며-아예-설치되지-않은-servicedesk의-경우try-it-for-free를-통해-설치가-바로-가능합니다이쯤되면-이미-software-라이선스가-있는-상황에서-core의-구매가-필요한가-core가-이미-있는데-software를-사야하나-같은-의문이-생길-수-있는데답은-필요에-따라서-라고-볼-수-있습니다간단히-말해-core의-기능을-사용할-수-있는-사용자-수와-software의-기능을-사용할-수-있는-사용자-수는별개로예를-들어-core-라이선스-100유저-software-라이선스-50유저를-구매-시-100유저는-기본적인-기능들을-50유저는-agile-보드-등의-추가-기능을-사용할-수-있다고-생각하면-됩니다이는-위-그림에서-application-access메뉴를-통해-제어가-가능합니다라이선스의-가격은-당연히core-software-servicedesk-순으로-비싸집니다가격-이야기가-나온-김에-잠깐-라이선스에-대해-짚고-넘어가자면-atlassian은-기본적으로-사용자-수를-기준으로라이선스-가격을-측정하고-있으며50유저---100유저와-같이-상위-라이선스로-업그레이드는-일정-비용의-추가로-업그레이드가-가능합니다다만-반대의-경우-새로-라이선스를-구매해야하는-단점이-있습니다올릴-때는-마음대로였겠지만-내릴-땐사용자-수에-따른-가격은-atlassian-홈페이지에-잘-정리되어-있으므로-넘어가겠습니다라이선스-정책-자체는-라이선스-구매-시-퍼펙트-라이선스로-기간이-만료되어도구매로부터-1년그대로-사용은-가능합니다다만-페널티가-두-가지-있는데-atlassian의-공식-support를-지원받지-못하는-것과-이후-릴리즈되는-버전에-대해업그레이드가-불가능한-점이-있습니다여담으로-10유저의-경우-지불하는-만원-가량의-비용은-atlassian의-수익이-아닌-기부금으로-들어간다고하므로-10유저-정도를-구매하여-테스트로-사용하는-것도-좋은-방법입니다-별다방-커피-두-잔-정도면그럼-다음편에선-실제-설치로-넘어가보도록-하겠습니다-공감sns신고">안녕하세요. 오픈소스컨설팅 전갑일입니다. #### 오늘부터 Jira라는 솔루션에 대한 글을 작성해보려합니다. 물론 이게 얼마나 갈지는 저도 잘 모릅니다.우선 본 문서는 Atlassian 회사의 제품 중 대표적인 제품인 Jira에 대하여 처음 접하는 사용자 또는 관리자를 대상으로 작성된 문서입니다. 기본설치부터 간단한 설정까지를 다룰 예정이며 상세한 설명보다는 미세한 팁 정도로 기술합니다.(의식의 흐름 기법을 사용하였기에 보기에 불편할 수 있습니다)[Overview]우선 Atlassian은 호주에 본사가 있는 외국계 기업으로서 회사 자체의 이름보다는 Jira 라는 솔루션이 더 유명한 회사입니다. 일반적으로 Atlassian은 몰라도 Jira는 아시는 분들이 많죠. 주로 Jira와 같이 연동하여 사용하는 Jira 못지않은 활용도를 자랑하는 Confluence라는 또 다른 제품도 있지만 이는 다음 기회에 적어보겠습니다. 애초에 사용처가 좀 다르긴 하지만 어찌보면 개발자가 아니신 분들에게는 Jira보다도 활용도가 높은 툴이라고 볼 수도 있습니다. 본론으로 돌아와서 Jira에 대해서 이야기하자면, 현재 최신은 7.3버전까지 존재하며, 개인적으로 많이 다루어본 것이 메이저 버전 6.4이후부터이기에 그 쯤에서 이야기를 시작하겠습니다. 여타 솔루션들이 그렇듯이, 메이저 버전이 업데이트 될 경우 대격변이라고 할 만큼 많은 변화가 생기는데 Jira또한 6.4에서 7.0으로 변경되며많은 변화가 있었습니다. 상세한 기능들은 필요하실 경우 각 버전별 릴리즈 노트에서 확인하시면 되며, 하나의 대표적인 예로써, 간단히 6버전의 Jira가 Jira Core로, Jira + Agile이 Jira Software로, Jira + ServiceDesk가 Jira ServiceDesk라는 솔루션으로 변경되었죠.기능상의 차이로는,Core는 의미 그대로 Jira의 기본 기능을 가진 Jira 인스턴스Software는 Core에 Software type의 프로젝트 생성 및 보드(Agile, KANBAN)기능이 추가ServiceDesk는 Core에 ServiceDesk기능(Email Request처리, Customer Portal)이 추가정도로 보시면 됩니다. (사실상 이름만 변경)또한 7버전에서부터는 위의 세 가지 솔루션을 Jira 인스턴스의 Versions &amp; licenses 메뉴부분에서 통합적으로 관리하게되어,필요할 경우 라이선스키를 입력, 삭제하는 방법으로 간편히 제어할 수 있도록 변경되었습니다. #### <img src="/blog/assets/images/59/Image.png" alt="Image.png" />그림에서 보다시피, Core, Software, ServiceDesk가 각각 따로 존재하는 것을 볼 수 있으며 아예 설치되지 않은 ServiceDesk의 경우 Try it for free를 통해 설치가 바로 가능합니다. 이쯤되면  “이미 Software 라이선스가 있는 상황에서 Core의 구매가 필요한가?” “Core가 이미 있는데 Software를 사야하나?” 같은 의문이 생길 수 있는데, 답은 “필요에 따라서” 라고 볼 수 있습니다. 간단히 말해 Core의 기능을 사용할 수 있는 사용자 수와 Software의 기능을 사용할 수 있는 사용자 수는 별개로예를 들어 Core 라이선스 100유저, Software 라이선스 50유저를 구매 시 100유저는 기본적인 기능들을, 50유저는 Agile 보드 등의 추가 기능을 사용할 수 있다고 생각하면 됩니다. 이는 위 그림에서 Application Access메뉴를 통해 제어가 가능합니다. 라이선스의 가격은 당연히(?)Core, Software, ServiceDesk 순으로 비싸집니다. 가격 이야기가 나온 김에 잠깐 라이선스에 대해 짚고 넘어가자면, Atlassian은 기본적으로 사용자 수를 기준으로 라이선스 가격을 측정하고 있으며, 50유저 -&gt; 100유저와 같이 상위 라이선스로 업그레이드는 일정 비용의 추가로 업그레이드가 가능합니다.다만, 반대의 경우 새로 라이선스를 구매해야하는 단점이 있습니다. (올릴 때는 마음대로였겠지만 내릴 땐…)사용자 수에 따른 가격은 Atlassian 홈페이지에 잘 정리되어 있으므로 넘어가겠습니다. 라이선스 정책 자체는 라이선스 구매 시 퍼펙트 라이선스로, 기간이 만료되어도(구매로부터 1년)그대로 사용은 가능합니다. 다만 페널티가 두 가지 있는데 Atlassian의 공식 Support를 지원받지 못하는 것과, 이후 릴리즈되는 버전에 대해 업그레이드가 불가능한 점이 있습니다. 여담으로 10유저의 경우 지불하는 만원 가량의 비용은 Atlassian의 수익이 아닌 기부금으로 들어간다고하므로, 10유저 정도를 구매하여 테스트로 사용하는 것도 좋은 방법입니다. (별다방 커피 두 잔 정도면…)그럼 다음편에선 실제 설치로 넘어가보도록 하겠습니다.  공감sns신고</h4>
+
+
+  </div><a class="u-url" href="/blog/2018/06/25/tistory-59.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">OpenSourceConsulting</li><li><a class="u-email" href="mailto:sales@osci.kr">sales@osci.kr</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-1"><ul class="social-media-list"><li><a href="https://github.com/OpenSourceConsulting"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">OpenSourceConsulting</span></a></li></ul>
+</div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
