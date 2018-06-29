@@ -1,0 +1,18 @@
+---
+layout: post
+title: Jira 설정_9(Schemes)
+date: 2018-06-25 09:15:36 +0900
+categories: 
+author: OpenSourceConsulting
+---
+
+#### 드디어 마지막인 Scheme부분입니다. #### 앞서 나왔던 Field scheme이라던가 screen scheme들도 있기에 조금 더 정확히 쓰자면#### Issue security, Permission, Notification Scheme입니다만, 제목으론 조금 길어서 scheme으로 적었습니다. #### 그럼 Issue탭 설정의 마지막을 적어보겠습니다. Issue security schemes: 생성된 이슈들에 대해서 볼 수 있는 권한을 설정하는 메뉴입니다. 일반적으로 많이 사용하는 메뉴는 아니지만, 설명은 하고 넘어가야겠죠.우선 Add issue Security Scheme를 클릭하여 다음처럼 Test Issue Security Scheme을 생성합니다. #### ![1.png]({{ "/assets/images/69/1.png" | relative_url }})#### 그리고 우측의 Security Levels를 클릭 후 다음처럼 Test A와 Test B레벨을 만들어줍니다.#### ![2.png]({{ "/assets/images/69/2.png" | relative_url }})#### 그리고 우측의 Add를 클릭하여 해당 레벨에 포함될 사용자, 그룹, Role을 설정합니다. ![3.png]({{ "/assets/images/69/3.png" | relative_url }})위와 같이 설정이 완료되었다면, 앞서 Time Tracking과 Linked Issue를 추가하였듯이, 스크린에 Security Level필드를 추가하여 레벨을 설정합니다. 이후 해당 이슈는 이슈레벨에 맞는 사용자에게만 보여지게됩니다. (만약 해당 기능이 잘 동작하지 않는다면, 이후 설명드릴 Permission schemes의 Set Issue Security부분을 확인해보세요)![4.png]({{ "/assets/images/69/4.png" | relative_url }})Notificaiton schemes: 이름에서도 감이오듯이, 메일 설정에 관련된 부분입니다. 정확하게는 메일 서버가 구성되어있다는 전제하에, 어떤 상태일 때 메일을 발송할지를 지정하는 곳이죠. 기본적으론 Default Notification Scheme을 사용하며, 필요할 경우 Add Notification Scheme을 클릭하여 각 프로젝트별로 생성합니다. 보통 프로젝트별로 사용자나 그룹이 다르기에 따로 만들어서 사용하는 편이 좋습니다. 다음과 같이 새로 만들면, ![5.png]({{ "/assets/images/69/5.png" | relative_url }})이런 화면이 나타나며 만들어집니다. 각 이벤트에 대해 우측 Add를 클릭하여 사용자나 그룹, Role등을 지정하면되고, 이벤트 자체의 추가가 필요한 경우, 한참 앞에서 나왔던 Jira Administration - System - Events 메뉴에서 가능합니다. 
+
+#### ![6.png]({{ "/assets/images/69/6.png" | relative_url }})Permission schemes: 드디어 마지막으로 권한관리 메뉴입니다. 다시 한 번 상기시켜드리자면 이 메뉴는 프로젝트별로 적용되는 내용으로Jira 전체에 대한 권한은 Jira Administration - System - Global Permission에서 설정가능합니다. 
+
+다음처럼 빠르게 하나 만드시면,![7.png]({{ "/assets/images/69/7.png" | relative_url }})#### 대략 이런식으로 Notification scheme처럼 비슷한 화면이 나타나며 우측 Edit로 권한을 부여하시면 됩니다. 
+
+#### ![9.png]({{ "/assets/images/69/9.png" | relative_url }})보통 Jira Software버전을 설치 시, Default Permission Scheme과 Default Software Permission Scheme이 나뉘어져있는데 Default Permission Scheme의 경우 Assignable Users 권한이 jira-developers로 되어있기에 가끔 Business타입으로 프로젝트를 생성 시 Assignee에 타 유저가 검색되지 않는 경우가 있으므로 바꿔주는 것을 권장드립니다.그리고 필자는 귀찮아서 전부 없애고 하나로 통일했다고 합니다#### 여기까지 진행하시느라 고생많으셨으며, 다음에서는 여태 설정했던 내용들을 #### 실제 Project에 적용하는 것을 진행해보겠습니다.  공감sns신고
+
+
+

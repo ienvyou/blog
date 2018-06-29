@@ -1,0 +1,14 @@
+---
+layout: post
+title: Jira 설정_8(Time Tracking / Resolution / Priority)
+date: 2018-06-25 09:15:36 +0900
+categories: 
+author: OpenSourceConsulting
+---
+
+Time tracking: Jira Issue에서 Time Tracking기능을 사용할지 여부를 결정하는 메뉴입니다.만약 필드에 Time Tracking을 사용하도록 설정하였다면, 이슈를 생성 시 다음과 같이 시간을 설정할 수 있는 필드가 생기며예를 들어 3일짜리 일을 생성할 경우 3d를 입력 후 생성합니다. #### ![0.png]({{ "/assets/images/68/0.png" | relative_url }})#### 그럼 생성된 이슈의 우측에 이렇게 3일이 표시됩니다. ![1.png]({{ "/assets/images/68/1.png" | relative_url }})#### 시간을 기록하기 위해선 Sub-Task를 만드는 것처럼 이슈의 More에서 Log Work를 클릭하면 됩니다.  #### ![2.png]({{ "/assets/images/68/2.png" | relative_url }})#### 그리고 하루 일했다는 가정으로 1d를 입력 후 Log를 클릭하면, #### ![3.png]({{ "/assets/images/68/3.png" | relative_url }})이렇게 시간이 계산되는 것을 볼 수 있습니다. 눈치채셨겠지만, 자동으론 안됩니다. 물론 이를 자동화해주는 플러그인도 있겠지만, 기본적으론 되지않지요... 또한 사용자가 입력하는 방식이기에 필요하면 악용하기도 쉽습니다. (1시간 일하고 10시간 일했다고 기록한다던가)따라서 이 기능은 참조하는 정도지, 이것을 업무평가의 절대적인 지표로 쓰기에는 적합하지 않습니다. 무엇보다 Jira에 익숙한 사용자조차도 이걸 입력하는 것은 굉장히 귀찮아요. ![4.png]({{ "/assets/images/68/4.png" | relative_url }})Issueu linking: Jira Issue에서 Issue linking기능을 사용할지 여부를 결정하는 메뉴입니다. 추가로 필요한 link 타입을 추가하거나 삭제할 수도 있죠. 우선 이 link가 무엇인지 설명드리자면 이슈간의 연결을 나타내는 것으로써, 해당 이슈가 다른 어떤 이슈와 연관되어있는지 혹은 다른 이슈에 의해 진행이 되지 않는지 등을 표시할 수 있습니다. 이 또한 Time Tracking처럼 Linked Issue 필드가 설정되어있을 때 이슈 생성 시 보여지게되는데 다음과 같이 is blocked by를 선택 후 이슈를 생성 시 이슈의 상세 페이지에 해당 이슈가 어떤 이슈에 의해 일이 진행되지 않는지를 표시합니다. ![5.png]({{ "/assets/images/68/5.png" | relative_url }})![6.jpg]({{ "/assets/images/68/6.jpg" | relative_url }})#### 그리고 해당 이슈를 클릭해보면, 이렇게 해당 이슈가 다른 이슈의 진행을 막고있음을 자동으로 표시하게되죠.![7.png]({{ "/assets/images/68/7.png" | relative_url }})#### Statuses: Jira의 스테이터스를 추가합니다. 현재 Jira에 존재하는 상태들을 보여주며 추가의 경우 앞서나왔던 워크플로우내에서 #### Status를 추가하는 것과 같은 내용이므로 넘어가겠습니다. 
+
+#### ![9.PNG]({{ "/assets/images/68/9.PNG" | relative_url }})Resolution: Jira의 필드 중 시스템적으로 설정된 필드 중 하나입니다. 기본적으로 Jira에서는 진행 중인 일을 끝낼 때(In Progress -> Done으로의 상태 변경) 해당 필드가 포함된 스크린을 띄우도록 하는데, 이 때 해당 이슈가 어떤 방식으로 끝났는지를 선택하게되죠. 다음처럼 해당 이슈가 수정되었는지, 수정되지는 않았지만 끝내야만 하는 경우라던지, 중복된 이슈라던지 등을 선택하여 차후 해당 이슈가 어떻게 끝났는지를 확인할 수 있게하는 필드입니다. ![8.png]({{ "/assets/images/68/8.png" | relative_url }})Priorities: 이슈의 긴급도를 설정하는 필드입니다. 이 또한 Resolution처럼 시스템필드이며, 필요에 따라 단계를 더 세분화하거나 간소화할 수 있습니다.기본은 5단계이며, 보통 3단계 정도로 쓰는게 수월합니다.많이 만들어봐야 어차피 다들 본인 이슈는 다 Highest로 만들거든요. 3단계도 마찬가지긴 하지만...#### ![10.PNG]({{ "/assets/images/68/10.PNG" | relative_url }})#### 다음은 드디어 이 설정의 마지막인 Scheme들(Issue Security, Permission, Notification)에 관련하여 적어보도록 하겠습니다.  공감sns신고
+
+
+

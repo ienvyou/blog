@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>openstack compute node 에 docker구현하기 | OpenSourceConsulting</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="openstack compute node 에 docker구현하기" />
+<meta name="author" content="OpenSourceConsulting" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="아래의 슬라이드는 오픈스택에서 compute node를 docker로 구현하는 문서입니다. #### 이전 자료에 benchmarking data를 추가하였습니다. #### ppt로 아래 슬라이드쉐어에서 다운받으실수 있습니다. #### Docker osc 0508 from Open Source Consulting #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### 공감sns신고저작자표시" />
+<meta property="og:description" content="아래의 슬라이드는 오픈스택에서 compute node를 docker로 구현하는 문서입니다. #### 이전 자료에 benchmarking data를 추가하였습니다. #### ppt로 아래 슬라이드쉐어에서 다운받으실수 있습니다. #### Docker osc 0508 from Open Source Consulting #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### 공감sns신고저작자표시" />
+<link rel="canonical" href="http://localhost:4000/blog/2018/06/25/tistory-57.html" />
+<meta property="og:url" content="http://localhost:4000/blog/2018/06/25/tistory-57.html" />
+<meta property="og:site_name" content="OpenSourceConsulting" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-25T09:15:36+09:00" />
+<script type="application/ld+json">
+{"description":"아래의 슬라이드는 오픈스택에서 compute node를 docker로 구현하는 문서입니다. #### 이전 자료에 benchmarking data를 추가하였습니다. #### ppt로 아래 슬라이드쉐어에서 다운받으실수 있습니다. #### Docker osc 0508 from Open Source Consulting #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### 공감sns신고저작자표시","author":{"@type":"Person","name":"OpenSourceConsulting"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2018/06/25/tistory-57.html","headline":"openstack compute node 에 docker구현하기","dateModified":"2018-06-25T09:15:36+09:00","datePublished":"2018-06-25T09:15:36+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2018/06/25/tistory-57.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="shortcut icon" type="image/png" href="./assets/favicon.png"<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="OpenSourceConsulting" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">OpenSourceConsulting</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">openstack compute node 에 docker구현하기</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-06-25T09:15:36+09:00" itemprop="datePublished">Jun 25, 2018
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">OpenSourceConsulting</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h4 id="아래의-슬라이드는-오픈스택에서-compute-node를-docker로-구현하는-문서입니다-이전-자료에-benchmarking-data를-추가하였습니다-ppt로-아래-슬라이드쉐어에서-다운받으실수-있습니다-----docker-osc-0508--from-open-source-consulting--------------------------공감sns신고저작자표시">아래의 슬라이드는 오픈스택에서 compute node를 docker로 구현하는 문서입니다. #### 이전 자료에 benchmarking data를 추가하였습니다. #### ppt로 아래 슬라이드쉐어에서 다운받으실수 있습니다. ####     Docker osc 0508  from Open Source Consulting #### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C38.PNG" alt="슬라이드38.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C39.PNG" alt="슬라이드39.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C40.PNG" alt="슬라이드40.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C41.PNG" alt="슬라이드41.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C42.PNG" alt="슬라이드42.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C43.PNG" alt="슬라이드43.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C44.PNG" alt="슬라이드44.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C45.PNG" alt="슬라이드45.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C46.PNG" alt="슬라이드46.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C47.PNG" alt="슬라이드47.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C48.PNG" alt="슬라이드48.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C49.PNG" alt="슬라이드49.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C50.PNG" alt="슬라이드50.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C51.PNG" alt="슬라이드51.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C52.PNG" alt="슬라이드52.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C53.PNG" alt="슬라이드53.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C54.PNG" alt="슬라이드54.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C55.PNG" alt="슬라이드55.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C56.PNG" alt="슬라이드56.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C57.PNG" alt="슬라이드57.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C58.PNG" alt="슬라이드58.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C59.PNG" alt="슬라이드59.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C60.PNG" alt="슬라이드60.PNG" />#### <img src="/blog/assets/images/57/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C61.PNG" alt="슬라이드61.PNG" /> 공감sns신고저작자표시</h4>
+
+
+  </div><a class="u-url" href="/blog/2018/06/25/tistory-57.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">OpenSourceConsulting</li><li><a class="u-email" href="mailto:sales@osci.kr">sales@osci.kr</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-1"><ul class="social-media-list"><li><a href="https://github.com/OpenSourceConsulting"><svg class="svg-icon"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg> <span class="username">OpenSourceConsulting</span></a></li></ul>
+</div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
