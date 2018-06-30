@@ -183,6 +183,9 @@ table {
   table td {
     border: 1px solid #e8e8e8; }
 
+.avatar-small {
+  border-radius: 50% !important; }
+
 /**
  * Site header
  */
