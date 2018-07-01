@@ -11,5 +11,8 @@
   {%- endif -%}
   {% if page.featured-image %}
     <meta content="{{ site.url }}/{{ page.featured-image }}" property="og:image">
+  {% else %}
+    <meta content="{{ site.url }}/assets/osc-horizontal-logo.png" property="og:image">
   {% endif %}
+  
 </head>
