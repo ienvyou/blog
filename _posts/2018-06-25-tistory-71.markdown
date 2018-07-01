@@ -4,6 +4,7 @@ title: 팀에게 애자일 조금씩 주입하기.
 date: 2018-06-25 09:15:36 +0900
 categories: ['agile', 'jira', 'scrum']
 description: 애자일을 시작하려는 팀에게.
+featured-image: assets/images/71/1_DYLGTNodpq9Fal-prB2rHg.png
 author: it2seiyon
 ---
 
